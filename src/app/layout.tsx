@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toastify.tk"),
+  metadataBase: new URL("https://v2.toastify.tk"),
   title: "ToastedToast",
   description: "frontend & discord bot developer",
   themeColor: colors.orange[500],
