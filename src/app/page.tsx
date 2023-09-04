@@ -49,21 +49,23 @@ interface Experience {
   };
 }
 
-function Experience(project: Experience) {
+function Experience(experience: Experience) {
   return (
     <li className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2">
       <p className='relative text-muted-foreground after:invisible after:content-["0000_—_0000"]'>
         <span className="absolute">
-          {project.years.started} — {project.years.ended ?? "now"}
+          {experience.years.started} — {experience.years.ended ?? "now"}
         </span>
       </p>
       <div className="flex flex-col gap-1">
-        <Link href={project.href} className="w-fit">
+        <Link href={experience.href} className="w-fit">
           <h1 className="flex items-center gap-0.5 font-medium underline underline-offset-4">
-            {project.title} at {project.company} <ArrowTopRightIcon />
+            {experience.title} at {experience.company} <ArrowTopRightIcon />
           </h1>
         </Link>
-        <p className="text-sm text-muted-foreground">{project.description}</p>
+        <p className="text-sm text-muted-foreground">
+          {experience.description}
+        </p>
       </div>
     </li>
   );
