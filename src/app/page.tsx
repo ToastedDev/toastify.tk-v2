@@ -51,7 +51,7 @@ interface Experience {
 
 function Experience(project: Experience) {
   return (
-    <li className="flex items-start gap-2">
+    <li className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2">
       <p className='relative text-muted-foreground after:invisible after:content-["0000_—_0000"]'>
         <span className="absolute">
           {project.years.started} — {project.years.ended ?? "now"}
