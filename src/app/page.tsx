@@ -12,7 +12,7 @@ function Project({
 }) {
   return (
     <li className="flex flex-col gap-1">
-      <Link href={href}>
+      <Link href={href} className="w-fit">
         <h1 className="flex items-center gap-0.5 font-medium underline underline-offset-4">
           {name} <ArrowTopRightIcon />
         </h1>
