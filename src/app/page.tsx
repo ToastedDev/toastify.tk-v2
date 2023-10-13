@@ -92,11 +92,11 @@ const experiences: Experience[] = [
   },
   {
     title: "co-owner",
-    company: "united statistics",
-    description: "uniting all statistics servers into one.",
-    href: "https://discord.gg/jKQc3YJsjf",
+    company: "statistics assembly",
+    description: "the server that connects the statistics community.",
+    href: "https://discord.gg/HARDDqsEdQ",
     years: {
-      started: 2022,
+      started: 2023,
     },
   },
   {
