@@ -1,11 +1,11 @@
 import Navbar from "@/components/navbar";
 import Providers from "@/components/providers";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu_Mono } from "next/font/google";
 import colors from "tailwindcss/colors";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ubuntuMono = Ubuntu_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://v2.toastify.tk"),
@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ubuntuMono.className}>
         <div className="container py-8 text-[.9rem]">
           <Providers>
             <Navbar />

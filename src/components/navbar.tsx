@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="flex w-full items-center justify-between py-6">
-      <Link href="/">
+      <Link href="/" className="transition-all hover:opacity-80">
         <h1 className="text-lg font-semibold">ToastedToast</h1>
         <p className="text-xs">frontend & discord bot developer</p>
       </Link>

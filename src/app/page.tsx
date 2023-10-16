@@ -1,4 +1,3 @@
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 interface Project {
@@ -11,8 +10,8 @@ function Project(project: Project) {
   return (
     <li className="flex flex-col gap-1">
       <Link href={project.href} className="w-fit">
-        <h1 className="flex items-center gap-0.5 font-medium underline underline-offset-4">
-          {project.name} <ArrowTopRightIcon />
+        <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
+          {project.name}
         </h1>
       </Link>
       <p className="text-sm text-muted-foreground">{project.description}</p>
@@ -59,8 +58,8 @@ function Experience(experience: Experience) {
       </p>
       <div className="flex flex-col gap-1">
         <Link href={experience.href} className="w-fit">
-          <h1 className="flex items-center gap-0.5 font-medium underline underline-offset-4">
-            {experience.title} at {experience.company} <ArrowTopRightIcon />
+          <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
+            {experience.title} at {experience.company}
           </h1>
         </Link>
         <p className="text-sm text-muted-foreground">
@@ -113,7 +112,7 @@ const experiences: Experience[] = [
 export default function Home() {
   return (
     <>
-      <h1 className="text-lg font-light" id="projects">
+      <h1 className="text-lg" id="projects">
         projects
       </h1>
       <ul className="mt-2.5 flex flex-col gap-3">
@@ -121,7 +120,7 @@ export default function Home() {
           <Project key={project.name} {...project} />
         ))}
       </ul>
-      <h1 className="mt-6 text-lg font-light" id="experience">
+      <h1 className="mt-6 text-lg" id="experience">
         experience
       </h1>
       <ul className="mt-2.5 flex flex-col gap-3">
