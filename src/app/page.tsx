@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 interface Project {
   name: string;
@@ -12,6 +13,7 @@ function Project(project: Project) {
       <Link href={project.href} className="w-fit">
         <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
           {project.name}
+          <ArrowTopRightIcon />
         </h1>
       </Link>
       <p className="text-sm text-muted-foreground">{project.description}</p>
@@ -60,6 +62,7 @@ function Experience(experience: Experience) {
         <Link href={experience.href} className="w-fit">
           <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
             {experience.title} at {experience.company}
+          <ArrowTopRightIcon />
           </h1>
         </Link>
         <p className="text-sm text-muted-foreground">
