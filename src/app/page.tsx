@@ -1,41 +1,56 @@
-import Link from "next/link";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 interface Project {
   name: string;
   description: string;
   href: string;
+  tags?: string[];
 }
 
 function Project(project: Project) {
   return (
-    <li className="flex flex-col gap-1">
-      <Link href={project.href} className="w-fit">
-        <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
-          {project.name}
-          <ArrowTopRightIcon />
-        </h1>
+    <li>
+      <Link
+        href={project.href}
+        target="_blank"
+        className="flex flex-col gap-1 rounded-lg p-2 outline-none transition-all hover:bg-muted/80 focus-visible:ring-1 focus-visible:ring-ring"
+      >
+        <div className="flex items-center gap-1">
+          <h1 className="flex items-center gap-0.5 font-medium">
+            {project.name}
+            <ArrowTopRightIcon />
+          </h1>
+          {project.tags?.map((tag) => (
+            <div key={tag} className="rounded-full bg-primary px-2 text-sm">
+              {tag}
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-muted-foreground">{project.description}</p>
       </Link>
-      <p className="text-sm text-muted-foreground">{project.description}</p>
     </li>
   );
 }
 
 const projects: Project[] = [
   {
-    name: "yabcounts",
-    description: "live counts, reimagined.",
+    name: "yab ?! counts",
+    description: "reimagining the concept of live counters.",
     href: "https://yabcounts.com",
+    tags: ["work", "statistics"],
   },
   {
-    name: "statistical",
-    description: "tracking your favorite creators so you can see their growth.",
-    href: "https://statistical.vercel.app",
+    name: "color battles",
+    description: "comparing different colors because it's fun.",
+    href: "https://colorbattles.imtca.repl.co",
+    tags: ["side project", "statistics"],
   },
   {
-    name: "nickify",
-    description: "add your subscriber count to your nickname with ease.",
-    href: "https://nickify.vercel.app",
+    name: "dreamcord",
+    description: "the discord package of your dreams.",
+    href: "https://dreamcord.js.org",
+    tags: ["side project", "discord"],
   },
 ];
 
@@ -52,23 +67,27 @@ interface Experience {
 
 function Experience(experience: Experience) {
   return (
-    <li className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2">
-      <p className='relative text-muted-foreground after:invisible after:content-["0000_—_0000"]'>
-        <span className="absolute">
-          {experience.years.started} — {experience.years.ended ?? "now"}
-        </span>
-      </p>
-      <div className="flex flex-col gap-1">
-        <Link href={experience.href} className="w-fit">
-          <h1 className="flex items-center gap-0.5 font-medium transition-all hover:opacity-80">
-            {experience.title} at {experience.company}
-          <ArrowTopRightIcon />
-          </h1>
-        </Link>
-        <p className="text-sm text-muted-foreground">
-          {experience.description}
+    <li>
+      <Link
+        href={experience.href}
+        target="_blank"
+        className="flex flex-col gap-1 rounded-lg p-2 outline-none transition-all hover:bg-muted/80 focus-visible:ring-1 focus-visible:ring-ring sm:flex-row sm:items-start sm:gap-2"
+      >
+        <p className='relative text-muted-foreground after:invisible after:content-["0000_—_0000"]'>
+          <span className="absolute">
+            {experience.years.started} — {experience.years.ended ?? "now"}
+          </span>
         </p>
-      </div>
+        <div className="flex flex-col gap-1">
+          <h1 className="flex items-center gap-0.5 font-medium">
+            {experience.title} at {experience.company}
+            <ArrowTopRightIcon />
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            {experience.description}
+          </p>
+        </div>
+      </Link>
     </li>
   );
 }
@@ -77,7 +96,7 @@ const experiences: Experience[] = [
   {
     title: "frontend developer",
     company: "yab ?! counts llc",
-    description: "live counts, reimagined.",
+    description: "reimagining the concept of live counters.",
     href: "https://yabcounts.com",
     years: {
       started: 2023,
@@ -93,7 +112,7 @@ const experiences: Experience[] = [
     },
   },
   {
-    title: "co-owner",
+    title: "co-founder",
     company: "statistics assembly",
     description: "the server that connects the statistics community.",
     href: "https://discord.gg/HARDDqsEdQ",
