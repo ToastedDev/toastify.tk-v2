@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import Providers from "@/components/providers";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Ubuntu_Mono } from "next/font/google";
 import colors from "tailwindcss/colors";
 import "./globals.css";
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://v2.toastify.tk"),
   title: "ToastedToast",
   description: "frontend & discord bot developer",
-  themeColor: colors.orange[500],
   twitter: {
     card: "summary",
     creator: "@ToastedDev",
@@ -26,6 +25,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: colors.orange[500],
 };
 
 export default function RootLayout({
