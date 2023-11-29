@@ -1,3 +1,4 @@
+import Navbar from "@/components/navbar";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
@@ -134,6 +135,7 @@ const experiences: Experience[] = [
 export default function Home() {
   return (
     <>
+      <Navbar />
       <h1 className="text-lg" id="projects">
         projects
       </h1>

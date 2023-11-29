@@ -1,5 +1,4 @@
-import Navbar from "@/components/navbar";
-import Providers from "@/components/providers";
+import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Ubuntu_Mono } from "next/font/google";
 import colors from "tailwindcss/colors";
@@ -37,14 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={ubuntuMono.className}>
-        <div className="container py-8 text-[.9rem]">
-          <Providers>
-            <Navbar />
-            <main>{children}</main>
-          </Providers>
-        </div>
+    <html
+      lang="en"
+      className={cn("dark [color-scheme:dark]", ubuntuMono.className)}
+    >
+      <body className="container py-8 text-[.9rem]">
+        <main>{children}</main>
       </body>
     </html>
   );
