@@ -7,7 +7,7 @@ import "./globals.css";
 const ubuntuMono = Ubuntu_Mono({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://v2.toastify.tk"),
+  metadataBase: new URL("https://toasted.is-a.dev"),
   title: "ToastedToast",
   description: "frontend & discord bot developer",
   twitter: {
